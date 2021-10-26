@@ -1,0 +1,5 @@
+.page .waline-wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
