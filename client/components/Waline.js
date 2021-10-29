@@ -17,7 +17,7 @@ export const WalineComponent = defineComponent({
       })
     })
 
-    return () => h('div', { id: 'waline', ref: el => (walineRef.value = el) }, [1])
+    return () => h('div', { id: 'waline', ref: el => (walineRef.value = el) })
   }
 })
 
