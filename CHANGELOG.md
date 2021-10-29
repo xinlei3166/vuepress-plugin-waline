@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.3...v0.1.4) (2021-10-29)
+
+
+### Features
+
+* remove useless code ([2ce41b2](https://github.com/xinlei3166/vuepress-plugin-waline/commit/2ce41b20155999cdf5b5abe6d49de78ab4673ec1))
+
+
+
 ## [0.1.3](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.2...v0.1.3) (2021-10-29)
 
 
