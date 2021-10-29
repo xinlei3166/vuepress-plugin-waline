@@ -1,15 +1,6 @@
 import { defineClientAppSetup } from '@vuepress/client'
-import {
-  createApp,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  onBeforeUnmount,
-  watch,
-  nextTick
-} from 'vue'
-import { useRouter, useRoute, onBeforeRouteLeave } from 'vue-router'
+import { onMounted, onBeforeUnmount, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Waline from './components/Waline'
 
 const walineOptions = __WALINE_OPTIONS__
@@ -20,7 +11,6 @@ export default defineClientAppSetup(() => {
 
   onMounted(() => {
     updateWaline()
-    // nextTick(updateWaline)
   })
 
   onBeforeUnmount(() => waline?.destroy())
