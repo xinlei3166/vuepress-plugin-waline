@@ -1,3 +1,12 @@
+## [0.1.5](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.4...v0.1.5) (2021-10-29)
+
+
+### Features
+
+* waline 由于用到domapi，改为按需加载。 ([3997eba](https://github.com/xinlei3166/vuepress-plugin-waline/commit/3997eba9e8b367d031f13893176fa8908efd6def))
+
+
+
 ## [0.1.4](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.3...v0.1.4) (2021-10-29)
 
 
