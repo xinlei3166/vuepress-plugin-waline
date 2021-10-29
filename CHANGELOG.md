@@ -1,3 +1,12 @@
+## [0.1.6](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.5...v0.1.6) (2021-10-29)
+
+
+### Features
+
+* waline 改为cdn引入。 ([5ff5427](https://github.com/xinlei3166/vuepress-plugin-waline/commit/5ff54270a17e1f9013decb038cd4919ec763f4e5))
+
+
+
 ## [0.1.5](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.4...v0.1.5) (2021-10-29)
 
 

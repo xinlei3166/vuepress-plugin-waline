@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-waline",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "vuepress plugin for waline",
   "repository": {
     "type": "git",
