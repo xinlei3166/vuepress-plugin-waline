@@ -1,37 +1,27 @@
-import {
-  createApp,
-  ref,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  watch,
-  nextTick
-} from 'vue'
+import { createApp, ref, defineComponent, h, onMounted } from 'vue'
 
-import _Waline from '@waline/client'
+import Waline from '@waline/client'
 
-export const Waline = defineComponent({
-  name: 'Waline',
+export const WalineComponent = defineComponent({
+  name: 'WalineComment',
   props: {
     walineOptions: { type: Object, default: () => ({}) }
   },
   setup(props) {
     const walineRef = ref()
     onMounted(() => {
-      _Waline({
+      Waline({
         el: '#waline',
         serverURL: props.walineOptions.serverURL,
         login: props.walineOptions.login || 'force'
       })
     })
 
-    return () =>
-      h('div', { id: 'waline', ref: el => (walineRef.value = el) }, [1])
+    return () => h('div', { id: 'waline', ref: el => (walineRef.value = el) }, [1])
   }
 })
 
-Waline.newInstance = props => {
+WalineComponent.newInstance = props => {
   const { selector = 'main.page' } = props.walineOptions
 
   const container = document.createElement('div')
@@ -42,7 +32,7 @@ Waline.newInstance = props => {
 
   const app = createApp({
     render() {
-      return h(Waline, {
+      return h(WalineComponent, {
         ...props
       })
     }
@@ -60,4 +50,4 @@ Waline.newInstance = props => {
   }
 }
 
-export default Waline
+export default WalineComponent

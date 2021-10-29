@@ -12,14 +12,8 @@ const { path } = require('@vuepress/utils')
 const walinePlugin = ({ selector, serverURL, login, ...options }, app) => {
   return {
     name: 'vuepress-plugin-waline',
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      '../client/clientAppEnhance.js'
-    ),
-    clientAppSetupFiles: path.resolve(
-      __dirname,
-      '../client/clientAppSetupFiles.js'
-    ),
+    clientAppEnhanceFiles: path.resolve(__dirname, '../client/clientAppEnhance.js'),
+    clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetupFiles.js'),
     define: {
       __WALINE_OPTIONS__: { selector, serverURL, login, ...options }
     }

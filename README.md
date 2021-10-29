@@ -2,7 +2,7 @@
 
 ## 简介
 
-vuepress-plugin-waline 是一个基于 Vuepress 的插件，它可以帮助你更快的接入 [Waline](https://waline.js.org) 评论系统。
+vuepress-plugin-waline 是一个基于 Vuepress 2.x 的插件，它可以帮助你更快的接入 [Waline](https://waline.js.org) 评论系统。
 
 [查看Demo](https://xinlei3166.github.io/vuepress-demo/)
 
