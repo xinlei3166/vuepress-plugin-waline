@@ -23,7 +23,25 @@ yarn add -D vuepress-plugin-waline
 
 ```js
 plugins: [
-  ['vuepress-plugin-waline']
+  ['vuepress-plugin-waline', {
+    serverURL: 'https://waline.vercel.app'
+  }]
 ]
+```
+
+
+## vuepress-vite
+
+如果出现 `@waline/client/dist/Waline.min.js does not provide an export named default` 的错误，这是因为 `@waline/client` 包是umd格式的，对vite支持不友好，需要在vite打包配置中手动预加载此包。
+
+在 .vuepress/config.js 文件中添加以下内容：
+```js
+bundlerConfig: {
+  viteOptions: {
+    optimizeDeps: {
+      include: ['@waline/client']
+    }
+  }
+}
 ```
 
