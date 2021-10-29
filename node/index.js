@@ -16,6 +16,13 @@ const walinePlugin = ({ selector, serverURL, login, ...options }, app) => {
     clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetupFiles.js'),
     define: {
       __WALINE_OPTIONS__: { selector, serverURL, login, ...options }
+    },
+    extendsPageOptions: (options, app) => {
+      return {
+        frontmatter: {
+          head: [['script', { src: '//cdn.jsdelivr.net/npm/@waline/client' }]]
+        }
+      }
     }
   }
 }

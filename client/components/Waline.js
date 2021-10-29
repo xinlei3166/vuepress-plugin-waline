@@ -1,5 +1,4 @@
 import { createApp, ref, defineComponent, h, onMounted } from 'vue'
-
 // import Waline from '@waline/client'
 
 export const WalineComponent = defineComponent({
@@ -9,9 +8,8 @@ export const WalineComponent = defineComponent({
   },
   setup(props) {
     const walineRef = ref()
-    onMounted(async () => {
-      const Waline = (await import('@waline/client')).default
-      Waline({
+    onMounted(() => {
+      window.Waline({
         el: '#waline',
         serverURL: props.walineOptions.serverURL,
         login: props.walineOptions.login || 'force'
