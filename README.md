@@ -24,9 +24,9 @@ yarn add -D vuepress-plugin-waline
 
 ```js
 plugins: [
-  ['vuepress-plugin-waline', {
-    serverURL: 'https://waline.vercel.app'
-  }]
+  walinePlugin({
+    serverURL: 'https://waline-xinlei3166.vercel.app'
+  })
 ]
 ```
 
