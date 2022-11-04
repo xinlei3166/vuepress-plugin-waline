@@ -9,7 +9,7 @@ export const WalineComponent = defineComponent({
   setup(props) {
     const walineRef = ref()
     onMounted(() => {
-      window.Waline({
+      window.Waline.init({
         el: '#waline',
         serverURL: props.walineOptions.serverURL,
         login: props.walineOptions.login || 'force'

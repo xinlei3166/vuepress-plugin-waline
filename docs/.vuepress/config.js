@@ -1,3 +1,6 @@
+import { defaultTheme, defineUserConfig } from 'vuepress'
+import { walinePlugin } from '../../node'
+
 const locales = {
   '/': {
     'hide-text': 'Hide',
@@ -13,13 +16,13 @@ const locales = {
   }
 }
 
-module.exports = {
+export default defineUserConfig({
   title: 'VuePress',
   description: 'Life is short, Keep it simple.',
   head: [['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }]],
   base: process.env.BASE || '/',
   port: 3000,
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'xinlei3166/vuepress-plugin-demoblock',
     logo: '/logo.png',
     docsDir: 'docs',
@@ -48,7 +51,7 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     lastUpdatedText: '上次更新',
     contributorsText: '贡献者',
-  },
+  }),
   markdown: {
     // options for markdown-it-anchor
     anchor: { permalink: false, level: [1, 2] },
@@ -59,8 +62,8 @@ module.exports = {
     extractHeaders: { level: [ 'h2', 'h3', 'h4' ] }
   },
   plugins: [
-    [require('../../node'), {
+    walinePlugin({
       serverURL: 'https://waline-xinlei3166.vercel.app'
-    }]
+    })
   ]
-}
+})

@@ -1,4 +1,6 @@
-const { path } = require('@vuepress/utils')
+import { path, getDirname } from '@vuepress/utils'
+
+const __dirname = getDirname(import.meta.url)
 
 /**
  * vuepress waline plugin
@@ -9,22 +11,27 @@ const { path } = require('@vuepress/utils')
  * @param app Vue 应用实例。
  * @return {{clientAppEnhanceFiles, name: string, define: {__WALINE_OPTIONS__: (*&{el, serverURL, selector})}}}
  */
-const walinePlugin = ({ selector, serverURL, login, ...options }, app) => {
+export const walinePlugin = ({ selector, serverURL, login, ...options }, app) => {
   return {
     name: 'vuepress-plugin-waline',
-    clientAppEnhanceFiles: path.resolve(__dirname, '../client/clientAppEnhance.js'),
-    clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetupFiles.js'),
+    clientConfigFile: path.resolve(__dirname, '../client/config.js'),
     define: {
       __WALINE_OPTIONS__: { selector, serverURL, login, ...options }
     },
-    extendsPageOptions: (options, app) => {
-      return {
-        frontmatter: {
-          head: [['script', { src: '//cdn.jsdelivr.net/npm/@waline/client' }]]
-        }
+    extendsPageOptions: (pageOptions, app) => {
+      if (pageOptions.filePath?.startsWith(app.dir.source())) {
+        pageOptions.frontmatter = pageOptions.frontmatter ?? {}
+        pageOptions.frontmatter.head = pageOptions.frontmatter.head ?? []
+        pageOptions.frontmatter.head.push(
+          [
+            'link',
+            { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/@waline/client/dist/waline.css' }
+          ],
+          ['script', { src: '//cdn.jsdelivr.net/npm/@waline/client/dist/waline.js' }]
+        )
       }
     }
   }
 }
 
-module.exports = walinePlugin
+export default walinePlugin
