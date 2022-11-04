@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.6...v0.1.7) (2022-11-04)
+
+
+### Features
+
+* support vuepress@2.0.0-beta.51 ([b5d1f61](https://github.com/xinlei3166/vuepress-plugin-waline/commit/b5d1f618eaffe90675f475ff7e8afcfde99a0c30))
+
+
+
 ## [0.1.6](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.1.5...v0.1.6) (2021-10-29)
 
 
