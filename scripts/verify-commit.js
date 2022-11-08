@@ -1,8 +1,9 @@
 // Invoked on the commit-msg git hook by yorkie.
 
-const chalk = require('chalk')
+import chalk from 'chalk'
 const msgPath = process.env.GIT_PARAMS
-const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
+import { readFileSync } from 'fs'
+const msg = readFileSync(msgPath, 'utf-8').trim()
 
 const commitRE =
   /^(revert: )?(feat|fix|docs|style|refactor|perf|test|chore|revert|release)(\(.+\))?: .{1,50}/
