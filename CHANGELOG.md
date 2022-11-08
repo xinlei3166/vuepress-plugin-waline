@@ -1,3 +1,7 @@
+## [0.2.2](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.2.1...v0.2.2) (2022-11-08)
+
+
+
 ## [0.2.1](https://github.com/xinlei3166/vuepress-plugin-waline/compare/v0.2.0...v0.2.1) (2022-11-04)
 
 
